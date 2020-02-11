@@ -55,10 +55,13 @@
         if(userChoice === computerChoice){
             document.getElementById("main-text").innerHTML = "You guessed it right!";
             document.getElementById("wins").innerHTML = wins++;
+            guessedLetters = [];
 
         } else {
             document.getElementById("main-text").innerHTML = "Try again!";
-        
+            document.getElementById("losses").innerHTML = losses--;
+            guessedLetters.push(userChoice);
+            document.getElementById("guessedLetters").innerHTML = guessedLetters;
             }
         }
 
