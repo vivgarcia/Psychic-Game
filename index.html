@@ -10,15 +10,59 @@
     <div class="container">
         <h1>The Psychic Game</h1>
 
-        <p>Guess what letter I'm thinking of?</p>
+        <p><span id=main-text>Guess what letter I'm thinking of?</span></p>
 
         <P>Wins: <span id="wins">0</span> </P>
 
         <P>Losses: <span id="losses">0</span></P>
 
-        <p>Guesses left: <span id="guessesLeft">0</span></p>
+        <p>Guesses left: <span id="guessesLeft">10</span></p>
 
-        <p>Your guesses so far:<span> </span></p>
+        <p>Your guesses so far:<span id="guessedLetters"> </span></p>
     </div>
+
+<!-- JavaScript Begins -->
+    <script>
+        var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i",
+        "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+        var wins = 0;
+        var losses = 0;
+
+        var wins = 0;
+        var losses = 0;
+        var guessesLeft = 10;
+        var guessedLetters = [];
+
+        //generate random letter
+
+        var randomLetter = Math.floor(Math.random() * alphabet.length);
+        var computerChoice = alphabet[randomLetter];
+        console.log(computerChoice);
+
+        //event listener for keyup event
+        document.onkeyup = function(event){
+        //user makes choice
+        var userChoice = event.key;
+        //double check userChoice is viable
+        var viableChoice = /[a-z]/gi;
+        if (!viableChoice.test(userChoice)) {
+        alert("please enter a letter");
+        }
+        else {
+        console.log(userChoice);
+            }
+        //if user guesses the right letter
+        if(userChoice === computerChoice){
+            document.getElementById("main-text").innerHTML = "You guessed it right!";
+            document.getElementById("wins").innerHTML = wins++;
+
+        } else {
+            document.getElementById("main-text").innerHTML = "Try again!";
+        
+            }
+        }
+
+       
+    </script>
 </body>
 </html>
