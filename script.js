@@ -5,10 +5,10 @@ var wins = 0;
 var losses = 0;
 var guessesLeft = 10;
 var guessedLetters = [];
-var gameOver = false;
+
 
 //generate random letter
-    
+   
 var randomLetter = Math.floor(Math.random() * alphabet.length);
 var computerChoice = alphabet[randomLetter];
 console.log("The computer choose " + computerChoice);
@@ -30,8 +30,7 @@ document.onkeyup = function(event){
     }
     else {
     console.log(userChoice);
-        }
-
+    }
     //if user guesses the right letter
     if(userChoice !== computerChoice){
         guessesLeft--;
@@ -45,9 +44,9 @@ document.onkeyup = function(event){
         document.getElementById("wins").innerText = wins;
         reset();
     }
-
+    if(guessesLeft === 0){
+        losses++;
+        document.getElementById("main-text").innerText = "You lose! Try again";
+        reset();
+    }
 }
-
-        
-
-       
