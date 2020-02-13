@@ -6,9 +6,7 @@ var losses = 0;
 var guessesLeft = 10;
 var guessedLetters = [];
 
-
-//generate random letter
-   
+//generate random letter 
 var randomLetter = Math.floor(Math.random() * alphabet.length);
 var computerChoice = alphabet[randomLetter];
 console.log("The computer choose " + computerChoice);
@@ -17,6 +15,8 @@ console.log("The computer choose " + computerChoice);
 function reset(){
     guessesLeft = 10;
     guessedLetters = [];
+    randomLetter = Math.floor(Math.random() * alphabet.length);
+    computerChoice = alphabet[randomLetter];
 }
 
 //event listener for keyup event
@@ -31,7 +31,7 @@ document.onkeyup = function(event){
     else {
     console.log(userChoice);
     }
-    //if user guesses the right letter
+    //logic on game play
     if(userChoice !== computerChoice){
         guessesLeft--;
         document.getElementById("guessesLeft").innerText = guessesLeft;
