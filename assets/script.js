@@ -44,7 +44,7 @@ document.onkeyup = function(event){
         document.getElementById("guessedLetters").innerText = guessedLetters;
     } else if(userChoice === computerChoice){
         wins++;
-        alert("You won!");
+        alert("You won! The computer chose " + computerChoice);
         document.getElementById("wins").innerText = wins;
         reset();
     } 
