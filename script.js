@@ -1,3 +1,4 @@
+//global variables
 var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i",
 "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
@@ -14,11 +15,13 @@ console.log("The computer choose " + computerChoice);
 //reset function
 function reset(){
     guessesLeft = 10;
+    document.getElementById("guessesLeft").innerText = guessesLeft;
     guessedLetters = [];
+    document.getElementById("guessedLetters").innerText = " ";
     randomLetter = Math.floor(Math.random() * alphabet.length);
     computerChoice = alphabet[randomLetter];
+    console.log("The computer choose " + computerChoice);
 }
-
 //event listener for keyup event
 document.onkeyup = function(event){
     //user makes choice
