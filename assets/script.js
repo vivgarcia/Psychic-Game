@@ -21,6 +21,7 @@ function reset(){
     randomLetter = Math.floor(Math.random() * alphabet.length);
     computerChoice = alphabet[randomLetter];
     console.log("The computer choose " + computerChoice);
+    document.getElementById("main-text").innerText = "Guess what letter I'm thinking of";
 }
 //event listener for keyup event
 document.onkeyup = function(event){
@@ -46,9 +47,10 @@ document.onkeyup = function(event){
         alert("You won!");
         document.getElementById("wins").innerText = wins;
         reset();
-    }
+    } 
     if(guessesLeft === 0){
         losses++;
+        document.getElementById("losses").innerText = losses;
         document.getElementById("main-text").innerText = "You lose! Try again";
         reset();
     }
