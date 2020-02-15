@@ -4,15 +4,18 @@ body{
     background-attachment: fixed;
     background-size: cover;
 }
-
+.container{
+    margin: 0 200px;
+    text-align: center;
+    border-radius: 24px;
+    opacity: 0.7;
+    background-color: purple;
+    padding: 20px;
+}
 h1 {
     font-family: 'Playfair Display', serif;
     color: #fff;
 }
 p {
     font-family: 'Montserrat', sans-serif;
-}
-.container{
-    margin: 0 auto;
-    text-align: center;
 }
